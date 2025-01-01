@@ -7,11 +7,10 @@ project(MyProject VERSION 1.0 LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
-# Tambahkan file sumber ke executable
-add_executable(MyProject
-    src/main.c
-    # Tambahkan file sumber lain jika ada
-)
+# Cari semua file .c di direktori src dan tambahkan ke executable
+file(GLOB_RECURSE SOURCE_FILES "src/*.c")
+
+add_executable(MyProject ${SOURCE_FILES})
 
 # Opsi untuk pengujian
 enable_testing()
