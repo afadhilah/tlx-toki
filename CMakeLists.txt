@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Nama proyek
-project(MyProject VERSION 1.0 LANGUAGES C CXX)
+project(TLX-TOKI LANGUAGES C CXX)
 
 # Set standar C dan C++
 set(CMAKE_C_STANDARD 11)
