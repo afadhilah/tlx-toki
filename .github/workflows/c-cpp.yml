@@ -23,7 +23,7 @@ jobs:
         run: cmake -S . -B build
 
       - name: Build with CMake
-        run: cmake --build build
+        run: cmake --build build --verbose
 
       - name: Run tests
         run: ctest --test-dir build
@@ -37,3 +37,6 @@ jobs:
 
       - name: Install with CMake to user directory
         run: cmake --install build --prefix $HOME/my_install
+
+      - name: Show build output
+        run: cat build/CMakeFiles/CMakeOutput.log
