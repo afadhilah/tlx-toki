@@ -28,15 +28,3 @@ jobs:
       - name: Run tests with CTest
         run: cmake --build build --target test
 
-      - name: Build the project
-        run: |
-          mkdir -p build
-          cd build
-          cmake ..
-          make
-
-      - name: Install with CMake to user directory
-        run: cmake --install build --prefix $HOME/my_install
-
-      - name: Show build output
-        run: cat build/CMakeFiles/CMakeOutput.log
