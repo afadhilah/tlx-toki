@@ -57,7 +57,7 @@ void reflectVertical(int matrix[MAX][MAX], int rows, int cols) {
     }
 }
 
-int main() {
+int FungsiP1() {
     int rows, cols, X;
     int matrix[MAX][MAX];
 

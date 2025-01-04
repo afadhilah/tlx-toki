@@ -19,7 +19,7 @@ int countNeighbors(char board[MAX_R][MAX_C], int r, int c, int R, int C) {
     return count;
 }
 
-int main() {
+int FungsiP2() {
     int R, C;
     char board[MAX_R][MAX_C];
     char newBoard[MAX_R][MAX_C];
