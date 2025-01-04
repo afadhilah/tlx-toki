@@ -58,33 +58,35 @@ void reflectVertical(int matrix[MAX][MAX], int rows, int cols) {
 }
 
 int FungsiP1() {
-    int rows, cols, X;
+    int rows = 3, cols = 3, X = 2;
     int matrix[MAX][MAX];
 
     // Membaca input
-    scanf("%d %d %d", &rows, &cols, &X);
+    //scanf("%d %d %d", &rows, &cols, &X);
+    int isi[100] = {1,2,3,4,5,6,7,8,9};
 
     // Membaca elemen-elemen matriks
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            scanf("%d", &matrix[i][j]);
+            //scanf("%d", &matrix[i][j]);
+            matrix[i][j] = isi[i*cols+j];
         }
     }
 
     // Membaca operasi dan melakukan manipulasi matriks sesuai dengan operasi
+    char operation[2] = {'_', '2'};
     for (int i = 0; i < X; i++) {
-        char operation[4];
-        scanf("%s", operation);
+        //scanf("%s", operation);
 
-        if (operation[0] == '_') {
+        if (operation[i] == '_') {
             reflectHorizontal(matrix, rows, cols);
-        } else if (operation[0] == '|') {
+        } else if (operation[i] == '|') {
             reflectVertical(matrix, rows, cols);
-        } else if (operation[0] == '9') {  // 90 derajat
+        } else if (operation[i] == '9') {  // 90 derajat
             rotate90(matrix, &rows, &cols);
-        } else if (operation[0] == '1') {  // 180 derajat
+        } else if (operation[i] == '1') {  // 180 derajat
             rotate180(matrix, &rows, &cols);
-        } else if (operation[0] == '2') {  // 270 derajat
+        } else if (operation[i] == '2') {  // 270 derajat
             rotate270(matrix, &rows, &cols);
         }
     }
