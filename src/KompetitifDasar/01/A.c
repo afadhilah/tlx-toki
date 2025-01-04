@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int FungsiA(){
+void FungsiA(){
     int M = 4, N = 3;
 
     // scanf("%d %d", &M, &N);
