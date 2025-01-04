@@ -28,3 +28,5 @@ jobs:
       - name: Run tests with CTest
         run: cmake --build build --target test
 
+      - name: Run executable
+        run: ./build/MyProject
