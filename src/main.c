@@ -11,6 +11,9 @@ int main() {
     printf("P1. Operasi Matriks\n");
     FungsiP1();
 
+    printf("P2. Runtuh\n");
+    FungsiP2();
 
+    
     return 0;
 }
