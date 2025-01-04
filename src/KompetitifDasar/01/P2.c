@@ -3,14 +3,14 @@
 #define MAX_R 100
 #define MAX_C 100
 
-int play(int i, int C, char board[MAX_R][MAX_C]){
+void play(int i, int C, char board[MAX_R][MAX_C]){
     for (int a = 0; a < C; a++){
         board[i][a] = '0';
     }
 }
 
 // Fungsi untuk menghitung jumlah tetangga hidup (nilai '1') untuk sebuah sel
-int countNeighbors(char board[MAX_R][MAX_C], int R, int C, int m) {
+void countNeighbors(char board[MAX_R][MAX_C], int R, int C, int m) {
     for (int i = 0; i < C; i++){
         for (int j = m; j >= 0; j--){
             if (board[j][i] == '1'){
@@ -40,7 +40,7 @@ int countNeighbors(char board[MAX_R][MAX_C], int R, int C, int m) {
     }
 }
 
-int FungsiP2() {
+void FungsiP2() {
     int R = 11, C = 6, m, n;
     char board[MAX_R][MAX_C];
 
