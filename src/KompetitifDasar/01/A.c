@@ -1,7 +1,8 @@
 #include <stdio.h>
+#define M 4
+#define N 3
 
 void FungsiA(){
-    int M = 4, N = 3;
 
     // scanf("%d %d", &M, &N);
     int inputan[M][N];

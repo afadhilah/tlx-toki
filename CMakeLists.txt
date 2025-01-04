@@ -8,7 +8,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 # Cari semua file .c di direktori src dan tambahkan ke executable
-file(GLOB_RECURSE SOURCE_FILES "src/main.c")
+file(GLOB_RECURSE SOURCE_FILES "src/*.c")
 
 add_executable(MyProject ${SOURCE_FILES})
 
