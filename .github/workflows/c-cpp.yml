@@ -28,5 +28,12 @@ jobs:
       - name: Run tests
         run: ctest --test-dir build
 
-      - name: Install project
-        run: cmake --install build --prefix /src
+      - name: Build the project
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+
+      - name: Install with CMake to user directory
+        run: cmake --install build --prefix $HOME/my_install
