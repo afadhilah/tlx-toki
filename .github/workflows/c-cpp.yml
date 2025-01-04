@@ -30,7 +30,7 @@ jobs:
 
       - name: Build the project
         run: |
-          mkdir build
+          mkdir -p build
           cd build
           cmake ..
           make
