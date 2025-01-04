@@ -2,10 +2,13 @@
 #include "KompetitifDasar/01/header.h"
 
 int main() {
-    printf("Memanggil fungsi dari file lain di folder:\n");
+    printf("Memanggil fungsi main:\n\n");
 
     // Memanggil fungsi dari file lain
+    printf("A. Perkenalan Soal Implementasi\n");
     FungsiA();
+
+    printf("P1. Operasi Matriks\n");
     FungsiP1();
 
 

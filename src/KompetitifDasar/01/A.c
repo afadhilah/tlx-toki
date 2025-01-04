@@ -24,5 +24,5 @@ void FungsiA(){
         }
         printf("\n");
     }
-    
+    printf("\n");
 }
