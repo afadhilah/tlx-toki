@@ -8,7 +8,7 @@ void FungsiP4() {
     char input[256] = "SeleksiTOKI2010"; // Maksimal panjang input adalah 255 karakter
     //scanf("%s", input);
 
-    int length = (int)strlen(input); // Panjang string input
+    int length = strlen(input); // Panjang string input
     int N = (int)ceil(sqrt(length)); // Ukuran sisi matriks terkecil
 
     char matrix[MAX][MAX]; // Matriks hasil
