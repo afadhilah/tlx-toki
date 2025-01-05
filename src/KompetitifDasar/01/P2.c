@@ -94,4 +94,5 @@ void FungsiP2() {
         }
         printf("\n");
     }
+    printf("\n");
 }

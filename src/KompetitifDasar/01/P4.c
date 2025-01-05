@@ -2,14 +2,16 @@
 #include <math.h>
 #include <string.h>
 
-int main() {
-    char input[256]; // Maksimal panjang input adalah 255 karakter
-    scanf("%s", input);
+#define MAX 100
+
+void FungsiP4() {
+    char input[256] = "SeleksiTOKI2010"; // Maksimal panjang input adalah 255 karakter
+    //scanf("%s", input);
 
     int length = strlen(input); // Panjang string input
     int N = (int)ceil(sqrt(length)); // Ukuran sisi matriks terkecil
 
-    char matrix[N][N]; // Matriks hasil
+    char matrix[MAX][MAX]; // Matriks hasil
     int index = 0;     // Indeks untuk membaca karakter input
 
     // Isi matriks dengan karakter dari input
@@ -36,6 +38,4 @@ int main() {
         }
         printf("\n");
     }
-
-    return 0;
 }

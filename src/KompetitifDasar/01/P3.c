@@ -5,16 +5,16 @@
 #define MAX 26
 #define N_MAX 500
 
-int main() {
-    int n;
-    char original[N_MAX + 1], mapped1[N_MAX + 1], mapped2[N_MAX + 1];
+void FungsiP3() {
+    int n = 4;
+    char original[N_MAX + 1] = "TOKI", mapped1[N_MAX + 1] = "KITA", mapped2[N_MAX + 1] = "BISA";
     char mapping1[MAX] = {0}, mapping2[MAX] = {0};
 
     // Input handling
-    scanf("%d", &n);
-    scanf("%s", original);
-    scanf("%s", mapped1);
-    scanf("%s", mapped2);
+    // scanf("%d", &n);
+    // scanf("%s", original);
+    // scanf("%s", mapped1);
+    // scanf("%s", mapped2);
 
     // Validate and construct mappings
     for (int i = 0; i < n; i++) {
@@ -22,7 +22,7 @@ int main() {
 
         if ((mapping1[a - 'A'] && mapping1[a - 'A'] != b) || (mapping2[b - 'A'] && mapping2[b - 'A'] != a)) {
             printf("Pak Dengklek bingung\n");
-            return 0;
+            return;
         }
 
         mapping1[a - 'A'] = b;
@@ -38,7 +38,5 @@ int main() {
             printf("?");
         }
     }
-    printf("\n");
-
-    return 0;
+    printf("\n\n");
 }

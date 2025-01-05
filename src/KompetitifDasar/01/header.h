@@ -4,6 +4,7 @@
 void FungsiA();
 void FungsiP1();
 void FungsiP2();
-
+void FungsiP3();
+void FungsiP4();
 
 #endif
