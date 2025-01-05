@@ -6,6 +6,8 @@ project(TLX-TOKI LANGUAGES C CXX)
 # Set standar C dan C++
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lm")
+
 
 # Cari semua file .c di direktori src dan tambahkan ke executable
 file(GLOB_RECURSE SOURCE_FILES "src/*.c")
