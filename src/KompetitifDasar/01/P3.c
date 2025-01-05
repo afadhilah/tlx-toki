@@ -3,39 +3,12 @@
 #include <stdbool.h>
 
 #define MAX 26
-#define N_MAX 100
-
-bool is_valid_mapping(char *original, char *mapped, int n, char *mapping) {
-    char reverse_mapping[MAX] = {0};
-    for (int i = 0; i < n; i++) {
-        char o = original[i];
-        char m = mapped[i];
-        if (mapping[o - 'A'] == 0 && reverse_mapping[m - 'A'] == 0) {
-            mapping[o - 'A'] = m;
-            reverse_mapping[m - 'A'] = o;
-        } else if (mapping[o - 'A'] != m || reverse_mapping[m - 'A'] != o) {
-            return false;
-        }
-    }
-    return true;
-}
-
-void decode_message(char *mapped, char *decoded, char *mapping, int n) {
-    for (int i = 0; i < n; i++) {
-        char m = mapped[i];
-        if (mapping[m - 'A'] != 0) {
-            decoded[i] = mapping[m - 'A'];
-        } else {
-            decoded[i] = '?';
-        }
-    }
-    decoded[n] = '\0';
-}
+#define N_MAX 500
 
 int main() {
     int n;
     char original[N_MAX + 1], mapped1[N_MAX + 1], mapped2[N_MAX + 1];
-    char mapping[MAX] = {0};
+    char mapping1[MAX] = {0}, mapping2[MAX] = {0};
 
     // Input handling
     scanf("%d", &n);
@@ -43,17 +16,29 @@ int main() {
     scanf("%s", mapped1);
     scanf("%s", mapped2);
 
-    // Check mapping validity
-    if (!is_valid_mapping(original, mapped1, n, mapping)) {
-        printf("Pak Dengklek bingung\n");
-        return 0;
+    // Validate and construct mappings
+    for (int i = 0; i < n; i++) {
+        char a = original[i], b = mapped1[i];
+
+        if ((mapping1[a - 'A'] && mapping1[a - 'A'] != b) || (mapping2[b - 'A'] && mapping2[b - 'A'] != a)) {
+            printf("Pak Dengklek bingung\n");
+            return 0;
+        }
+
+        mapping1[a - 'A'] = b;
+        mapping2[b - 'A'] = a;
     }
 
     // Decode the second message
-    char decoded[N_MAX + 1];
-    decode_message(mapped2, decoded, mapping, n);
-
-    printf("%s\n", decoded);
+    for (int i = 0; i < n; i++) {
+        char b = mapped2[i];
+        if (mapping2[b - 'A']) {
+            printf("%c", mapping2[b - 'A']);
+        } else {
+            printf("?");
+        }
+    }
+    printf("\n");
 
     return 0;
 }
