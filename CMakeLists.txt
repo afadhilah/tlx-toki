@@ -13,7 +13,7 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lm")
 file(GLOB_RECURSE SOURCE_FILES "src/*.c")
 
 add_executable(MyProject ${SOURCE_FILES})
-target_link_libraries(MyProject PRIVATE m)
+target_link_libraries(MyProject PRIVATE m) #FUngsiP4
 
 # Opsi untuk pengujian
 enable_testing()
